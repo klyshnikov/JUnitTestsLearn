@@ -39,4 +39,15 @@ class TodoServiceImplTest {
         var firstPriority = todoService.findByPriorityTested(1);
         Assertions.assertEquals(2, firstPriority.size());
     }
+
+    @Test
+    void findByDescription() {
+        Todo eat = new Todo(1, "you need to eat");
+        Todo chill = new Todo(2, "you need to chill");
+        Todo film = new Todo(1, "you need to chill");
+
+        Mockito.when(todoRepository.findAll()).thenReturn(List.of(eat, chill, film));
+        var chillTodo = todoService.findByDescription("you need to chill");
+        Assertions.assertEquals(2, chillTodo.size());
+    }
 }

@@ -12,4 +12,5 @@ public interface TodoService {
     public long deleteTodoByDescription(String description);
 
     public List<Todo> findByPriorityTested(Integer priority);
+    public List<Todo> findByDescription(String description);
 }

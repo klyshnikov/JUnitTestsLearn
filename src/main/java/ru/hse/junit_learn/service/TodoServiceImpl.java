@@ -45,4 +45,12 @@ public class TodoServiceImpl implements TodoService {
         var allTodo = getAllTodo();
         return allTodo.stream().filter(t -> Objects.equals(t.priority, priority)).toList();
     }
+
+    @Override
+    public List<Todo> findByDescription(String description) {
+        var allTodo = getAllTodo();
+        return allTodo.stream().filter(t -> Objects.equals(t.description, description)).toList();
+    }
+
+
 }
