@@ -10,11 +10,15 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-@AllArgsConstructor
+//@AllArgsConstructor
 public class TodoServiceImpl implements TodoService {
 
-    @Autowired
+    //@Autowired
     TodoRepository todoRepository;
+
+     public TodoServiceImpl(TodoRepository todoRepository) {
+         this.todoRepository = todoRepository;
+     }
 
     @Override
     public List<Todo> getAllTodo() {

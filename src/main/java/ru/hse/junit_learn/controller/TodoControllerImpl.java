@@ -10,10 +10,14 @@ import ru.hse.junit_learn.service.TodoService;
 import java.util.List;
 
 @RestController
-@AllArgsConstructor
+//@AllArgsConstructor
 //@RequestMapping("/api/v1");
 public class TodoControllerImpl {
-    @Autowired
+    //@Autowired
+    public TodoControllerImpl(TodoService todoService) {
+        this.todoService = todoService;
+    }
+
     TodoService todoService;
 
     @GetMapping("/get-all")
